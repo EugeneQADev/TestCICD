@@ -6,9 +6,14 @@ exports.config = {
     exclude: [
     ],
     maxInstances: 10,
-    capabilities: [{
-        browserName: 'chrome'
-    }],
+    capabilities: [
+        {
+            browserName: 'chrome',
+            'goog:chromeOptions': {
+                args: ['--headless', '--disable-gpu'],
+            },
+        },
+    ],
     logLevel: 'info',
     bail: 0,
     baseUrl: 'http://localhost',
